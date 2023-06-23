@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
         
         // changing alpha of the imageView1 (opacity)
-        diceImageView1.alpha = 0.5
+        diceImageView1.alpha = 0.3
     }
     
     
