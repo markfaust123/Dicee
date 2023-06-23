@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     // Touch Up Action (TAP)
     @IBAction func rollButtonPressed(_ sender: UIButton) {
         
+        diceImageView1.image = diceArray.randomElement()
+        diceImageView2.image = diceArray.randomElement()
+        
+        /*
         // Generate random numbers within inclusive range
         var leftDiceNumber = Int.random(in: 0...5)
         var rightDiceNumber = Int.random(in: 0...5)
@@ -37,6 +41,7 @@ class ViewController: UIViewController {
         // Print the current dice numbers
         print("Left Dice Number: \(leftDiceNumber + 1)")
         print("Right Dice Number: \(rightDiceNumber + 1)")
+         */
 
     }
     
