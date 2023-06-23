@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var diceImageView1: UIImageView!
+    @IBOutlet weak var diceImageView2: UIImageView!
     
     // activates when the view on phone loads up
     // (condition: when app first loads on phone)
@@ -26,8 +27,13 @@ class ViewController: UIViewController {
         // diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
         diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
         
+        // Challenge 1
         // changing alpha of the imageView1 (opacity)
         diceImageView1.alpha = 0.5
+        
+        // Challenge 2
+        // changing the die on the right ot DiceTwo upon app load up
+        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
     }
     
     
