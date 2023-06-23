@@ -19,7 +19,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         // who.what = value
         // currently just setting the image property of the image view
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
+        /*
+         diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
+         */
+        // alternative syntax
+        // diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
+        diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
         
         // changing alpha of the imageView1 (opacity)
         diceImageView1.alpha = 0.5
