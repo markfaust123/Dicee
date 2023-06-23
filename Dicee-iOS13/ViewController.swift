@@ -14,41 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    var leftDiceNumber = 1
+    var dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    
     // activates when the view on phone loads up
     // (condition: when app first loads on phone)
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // who.what = value
-        // currently just setting the image property of the image view
-        
-         // diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-        
-        // alternative syntax:
-        // diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
-        
-        // Challenge 1
-        // changing alpha of the imageView1 (opacity)
-        diceImageView1.alpha = 0.5
-        
-        // Challenge 2
-        // changing the die on the right ot DiceTwo upon app load up
-        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
+
     }
     
     // Touch Up Action (TAP)
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        // Challenge 3
-        // Changing first die
-        diceImageView1.image = #imageLiteral(resourceName: "DiceFour")
-        diceImageView1.alpha = 1
+        // put dice images into an array
+        // Array with type: UIImage
+        diceImageView1.image = dice[leftDiceNumber]
         
-        // Changing second die
-        diceImageView2.image = #imageLiteral(resourceName: "DiceFour")
-        
-        // Change confirmation to debug console
-        print("Dice have been changed.")
+        leftDiceNumber = (leftDiceNumber + 1) % 6
+
     }
     
 }
