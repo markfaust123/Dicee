@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
     }
     
+    // Touch Up Action (TAP)
     @IBAction func rollButtonPressed(_ sender: UIButton) {
         // Challenge 3
         // Changing first die
