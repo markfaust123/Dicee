@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
-    // Array with type: UIImage
-    var dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    // Array with type: UIImage (use let because array is constant)
+    let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     // activates when the view on phone loads up
     // (condition: when app first loads on phone)
@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         var rightDiceNumber = Int.random(in: 0...5)
         
         // Change the dice on the screen
-        diceImageView1.image = dice[leftDiceNumber]
-        diceImageView2.image = dice[rightDiceNumber]
+        diceImageView1.image = diceArray[leftDiceNumber]
+        diceImageView2.image = diceArray[rightDiceNumber]
         
         // Print the current dice numbers
         print("Left Dice Number: \(leftDiceNumber + 1)")
