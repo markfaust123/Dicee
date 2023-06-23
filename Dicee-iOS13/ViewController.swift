@@ -14,23 +14,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
-    var leftDiceNumber = 1
+    var leftDiceNumber = 0
+    var rightDiceNumber = 5
+    
+    // Array with type: UIImage
     var dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     // activates when the view on phone loads up
     // (condition: when app first loads on phone)
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        diceImageView2.image = #imageLiteral(resourceName: "DiceSix")
+        print("Left Dice Number: \(leftDiceNumber + 1)")
+        print("Right Dice Number: \(rightDiceNumber + 1)")
     }
     
     // Touch Up Action (TAP)
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        // put dice images into an array
-        // Array with type: UIImage
-        diceImageView1.image = dice[leftDiceNumber]
         
         leftDiceNumber = (leftDiceNumber + 1) % 6
+
+        rightDiceNumber = rightDiceNumber - 1
+        if rightDiceNumber == -1 {
+            rightDiceNumber = 5
+        }
+        
+        diceImageView1.image = dice[leftDiceNumber]
+        print("Left Dice Number: \(leftDiceNumber + 1)")
+        diceImageView2.image = dice[rightDiceNumber]
+        print("Right Dice Number: \(rightDiceNumber + 1)")
+        print("\n")
 
     }
     
